@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>이나영 | Portfolio</title>
+  <meta name="description" content="개발자 이나영의 포트폴리오" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script>
+    try {
+      var t = localStorage.getItem("theme");
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="logo" href="#top" id="logo"></a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-btn" id="themeBtn" aria-label="테마 전환">◐</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <p class="eyebrow" id="heroRole"></p>
+      <h1 id="heroName"></h1>
+      <p class="tagline" id="heroTagline"></p>
+      <div class="hero-links" id="heroLinks"></div>
+    </section>
+
+    <section id="about" class="section container reveal">
+      <h2 class="section-title">About</h2>
+      <div id="aboutBody" class="about"></div>
+    </section>
+
+    <section id="skills" class="section container reveal">
+      <h2 class="section-title">Skills</h2>
+      <div id="skillsBody" class="skills"></div>
+    </section>
+
+    <section id="experience" class="section container reveal">
+      <h2 class="section-title">Experience</h2>
+      <ol id="expBody" class="timeline"></ol>
+    </section>
+
+    <section id="projects" class="section container reveal">
+      <h2 class="section-title">Projects</h2>
+      <div id="projectsBody" class="projects"></div>
+    </section>
+
+    <section id="contact" class="section container reveal">
+      <h2 class="section-title">Contact</h2>
+      <p class="contact-text">함께 이야기 나누고 싶다면 언제든 연락 주세요.</p>
+      <a class="btn" id="contactMail"></a>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <span id="footerText"></span>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>
