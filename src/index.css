@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #f7f6f2;
+  --surface: #ffffff;
+  --surface-2: #efede7;
+  --text: #191b1f;
+  --muted: #6b6f76;
+  --accent: #3b5ccc;
+  --accent-soft: rgba(59, 92, 204, 0.08);
+  --ok: #047857;
+  --ok-soft: rgba(4, 120, 87, 0.09);
+  --border: #e5e4df;
+  --code-bg: #191b1f;
+  --code-text: #e8e8e4;
+  --code-muted: #8b9098;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #111315;
+  --surface: #181b1f;
+  --surface-2: #1f2328;
+  --text: #f4f4f2;
+  --muted: #989da5;
+  --accent: #7895e8;
+  --accent-soft: rgba(120, 149, 232, 0.12);
+  --ok: #4ade9b;
+  --ok-soft: rgba(74, 222, 155, 0.1);
+  --border: #292d33;
+  --code-bg: #0c0e10;
+  --code-text: #e8e8e4;
+  --code-muted: #7c828b;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-line: var(--border);
+  --color-code: var(--code-bg);
+  --color-code-ink: var(--code-text);
+  --color-code-muted: var(--code-muted);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+dialog::backdrop {
+  background: rgba(10, 12, 14, 0.55);
+  backdrop-filter: blur(2px);
+}

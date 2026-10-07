@@ -1,75 +1,49 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>이나영 | Portfolio</title>
-  <meta name="description" content="개발자 이나영의 포트폴리오" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
-  <link rel="stylesheet" href="assets/style.css" />
-  <script>
-    try {
-      var t = localStorage.getItem("theme");
-      if (t) document.documentElement.dataset.theme = t;
-    } catch (e) {}
-  </script>
-</head>
-<body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="logo" href="#top" id="logo"></a>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="theme-btn" id="themeBtn" aria-label="테마 전환">◐</button>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이나영 | Backend Developer</title>
+    <meta name="description" content="금융 시스템과 데이터의 흐름을 안정적으로 연결하는 백엔드 개발자 이나영의 포트폴리오입니다." />
+    <meta name="author" content="Nayoung Lee" />
+    <link rel="canonical" href="https://naayoung.github.io/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#F7F6F2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#111315" media="(prefers-color-scheme: dark)" />
 
-  <main id="top">
-    <section class="hero container">
-      <p class="eyebrow" id="heroRole"></p>
-      <h1 id="heroName"></h1>
-      <p class="tagline" id="heroTagline"></p>
-      <div class="hero-links" id="heroLinks"></div>
-    </section>
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:site_name" content="Nayoung Lee Portfolio" />
+    <meta property="og:title" content="이나영 | Backend Developer" />
+    <meta property="og:description" content="금융 시스템과 데이터의 흐름을 안정적으로 연결하는 백엔드 개발자 이나영의 포트폴리오입니다." />
+    <meta property="og:url" content="https://naayoung.github.io/" />
+    <meta property="og:image" content="https://naayoung.github.io/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="이나영 | Backend Developer" />
+    <meta name="twitter:description" content="금융 시스템과 데이터의 흐름을 안정적으로 연결하는 백엔드 개발자 이나영의 포트폴리오입니다." />
+    <meta name="twitter:image" content="https://naayoung.github.io/og-image.png" />
 
-    <section id="about" class="section container reveal">
-      <h2 class="section-title">About</h2>
-      <div id="aboutBody" class="about"></div>
-    </section>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&display=swap" />
 
-    <section id="skills" class="section container reveal">
-      <h2 class="section-title">Skills</h2>
-      <div id="skillsBody" class="skills"></div>
-    </section>
-
-    <section id="experience" class="section container reveal">
-      <h2 class="section-title">Experience</h2>
-      <ol id="expBody" class="timeline"></ol>
-    </section>
-
-    <section id="projects" class="section container reveal">
-      <h2 class="section-title">Projects</h2>
-      <div id="projectsBody" class="projects"></div>
-    </section>
-
-    <section id="contact" class="section container reveal">
-      <h2 class="section-title">Contact</h2>
-      <p class="contact-text">함께 이야기 나누고 싶다면 언제든 연락 주세요.</p>
-      <a class="btn" id="contactMail"></a>
-    </section>
-  </main>
-
-  <footer class="footer container">
-    <span id="footerText"></span>
-  </footer>
-
-  <script src="assets/data.js"></script>
-  <script src="assets/main.js"></script>
-</body>
+    <script>
+      // 첫 렌더 전에 테마를 적용해 깜빡임을 막는다.
+      (function () {
+        var theme;
+        try { theme = localStorage.getItem("theme"); } catch (e) {}
+        if (!theme) theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (theme === "dark") document.documentElement.classList.add("dark");
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>이 사이트는 JavaScript가 필요합니다.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
